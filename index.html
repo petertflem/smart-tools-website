@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Smart Tools</title>
+  </head>
+  <body>
+    <ul id="smart-tools-data"></ul>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script>
+      $(function () {
+        var socket = io();
+        socket.on('smart tools data', function(data){
+          $('#smart-tools-data').append($('<li>').text(data));
+        });
+      });
+    </script>
+  </body>
+</html>
